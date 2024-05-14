@@ -1,25 +1,34 @@
-import logo from './logo.svg';
+import React, { useContext } from 'react';
+
+import { UserContext, FocusContext } from './components/contexts'
+
+import Main from './pages/principal';
+import Program from "./pages/program";
+import Paint from './pages/paint';
+
 import './App.css';
 
 function App() {
+  const { Focus } = useContext(FocusContext);
+  const { } = useContext(UserContext);
+
+  const Source =
+  {
+    Main: <Main />,
+    Program: <Program />,
+    Paint: <Paint />
+  }
+
+  const SourceApp = Source[Focus || 'Main'];
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>{Focus}</h1>
+      {SourceApp}
     </div>
   );
 }
+
+
 
 export default App;
