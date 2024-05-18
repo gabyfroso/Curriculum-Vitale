@@ -1,0 +1,11 @@
+Header:
+10
+
+Aside:
+5
+
+Main:
+2
+
+Footer:
+10

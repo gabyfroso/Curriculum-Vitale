@@ -1,0 +1,115 @@
+.header * {
+    color: #ffffff;
+}
+
+.btnAppearence {
+    display: flex;
+
+    width: 100%;
+    height: 100%;
+
+    justify-content: center;
+    align-items: center;
+
+
+    background-color: transparent;
+
+    &:hover {
+        background-color: rgba(2, 2, 37, 0.2);
+        letter-spacing: 2px;
+    }
+}
+
+button {
+    border: thick solid rgba(3, 3, 23, 0.2);
+
+    &:hover{
+        letter-spacing: 4px;
+    }
+}
+
+.btn {
+    letter-spacing: 4px;
+    font-size: 1rem;
+
+    &:hover {
+        letter-spacing: 2px;
+    }
+}
+
+svg{
+    width: 40px;
+    height: 40px;
+}
+
+
+/*
+******* <<<<< INICIO
+*/
+
+.header {
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+
+    top: 0;
+    min-height: 90px;
+    height: auto;
+
+    width: 100%;
+    background-color: rgba(7, 7, 58, 0.256);
+
+    z-index: 10;
+
+    nav {
+        width: 100%;
+        height: 100%;
+
+        ul {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+
+            height: 100%;
+            width: 100%;
+
+            justify-content: space-evenly;
+
+            li {
+                width: 14em;
+                height: 90px;
+            }
+        }
+
+    }
+}
+
+.disableheader {
+    min-height: 40px;
+    background-color: transparent;
+}
+
+.ExtraUl {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+
+    li {
+        height: 2em !important;
+        width: 100%;
+
+        background-color: rgba(2, 2, 37, 0.5);
+    }
+}
+
+
+.ICON{
+    width: 40px;
+    height: 40px;
+
+    &>button{
+        padding: 2px;
+        border-radius: 50%;
+    }
+}

@@ -1,0 +1,31 @@
+Main >inicio
+Contacto >Contacto
+
+>>>>>>>>>>>><<<<<<<<<<< experiencias >>>>>>>>>>>><<<<<<<<<<<
+
+<<><><>> <<><><>> 
+<<><><>> exp-Programacion
+
+Todos los lenguajes serán separados en:
+-js
+-react
+-java
+-c
+-c# (progreso)
+-python (progreso)
+
+<<><><>> <<><><>> 
+<<><><>> exp-Electronica
+
+Todo tema de electricidad, arduino y proyectos electronicos y electricos.
+
+
+<<><><>> <<><><>> 
+<<><><>> exp-Dibujo
+
+Dibujos, animaciones, películas, cortometrajes. y modelado
+
+<<><><>> <<><><>> 
+<<><><>> exp-Medic
+
+Todo lo que tenga que ver con Asistente paramécido, veterinario, etc.

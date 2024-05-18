@@ -1,6 +1,8 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 
 import { UserContext, FocusContext } from './components/contexts'
+
+import Header from "./components/Header";
 
 import Main from './pages/principal';
 import Program from "./pages/program";
@@ -12,6 +14,11 @@ function App() {
   const { Focus } = useContext(FocusContext);
   const { } = useContext(UserContext);
 
+  const [Extras_1, setExtras_1] = useState(true);
+
+  const OnOffExtra_1 = () => {
+    setExtras_1(!Extras_1);
+  }
   const Source =
   {
     Main: <Main />,
@@ -23,8 +30,33 @@ function App() {
 
   return (
     <div className="App">
-      <h1>{Focus}</h1>
-      {SourceApp}
+      <Header />
+
+      {
+        /**
+         * 
+        <div id='Important'>
+        <button onClick={OnOffExtra_1}
+          className='iButton'>
+          i
+        </button>
+        {
+          Extras_1 &&
+          <>
+            <abbr>{Focus}</abbr>
+          </>
+        }
+      </div>
+         */
+      }
+
+      <main style={{ width: '100%' }}>
+
+        <div className='main'>
+          {SourceApp}
+
+        </div>
+      </main>
     </div>
   );
 }
