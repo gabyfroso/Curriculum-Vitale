@@ -14,11 +14,6 @@ function App() {
   const { Focus } = useContext(FocusContext);
   const { } = useContext(UserContext);
 
-  const [Extras_1, setExtras_1] = useState(true);
-
-  const OnOffExtra_1 = () => {
-    setExtras_1(!Extras_1);
-  }
   const Source =
   {
     Main: <Main />,
@@ -31,27 +26,8 @@ function App() {
   return (
     <div className="App">
       <Header />
-
-      {
-        /**
-         * 
-        <div id='Important'>
-        <button onClick={OnOffExtra_1}
-          className='iButton'>
-          i
-        </button>
-        {
-          Extras_1 &&
-          <>
-            <abbr>{Focus}</abbr>
-          </>
-        }
-      </div>
-         */
-      }
-
       <main style={{ width: '100%' }}>
-
+        <h2>{Focus}</h2>
         <div className='main'>
           {SourceApp}
 

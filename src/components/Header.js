@@ -81,13 +81,15 @@ function Nav({ children, newFocus, action, extrastyle }) {
 
     const newAction = () => {
         if (newFocus) {
-            setFocus(newFocus)
+            setFocus(newFocus);
+            return;
         }
         if (action) {
             action();
+            return;
         }
 
-        console.log('_ _header.js > nav');
+        console.log('_ _header.js > Nav');
         console.log('error en la acción del elemento NAV');
     }
 
@@ -107,13 +109,15 @@ function ExtraNav({ children, newFocus, action, extrastyle = StlHeader.Extrabtn 
 
     const newAction = () => {
         if (newFocus) {
-            setFocus(newFocus)
+            setFocus(newFocus);
+            return;
         }
         if (action) {
             action();
+            return;
         }
 
-        console.log('_ _header.js > nav');
+        console.log('_ _header.js > ExtraNav');
         console.log('error en la acción del elemento NAV');
     }
 
