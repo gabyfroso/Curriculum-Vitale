@@ -56,10 +56,10 @@ function Exp() {
     return (
         <Expansible text='Experiencia'>
             <h3>Experiencia en:</h3>
-            <ExtraNav newFocus={'exp-Programacion'}>Programacion</ExtraNav>
-            <ExtraNav newFocus={'exp-Electronica'}>Electronica</ExtraNav>
-            <ExtraNav newFocus={'exp-Dibujo'}>Dibujo</ExtraNav>
-            <ExtraNav newFocus={'exp-Medic'}>Asistente Paramédico</ExtraNav>
+            <ExtraNav newFocus={'expProgramacion'}>Programacion</ExtraNav>
+            <ExtraNav newFocus={'expElectronica'}>Electronica</ExtraNav>
+            <ExtraNav newFocus={'expDibujo'}>Dibujo</ExtraNav>
+            <ExtraNav newFocus={'expParamedic'}>Asistente Paramédico</ExtraNav>
         </Expansible>
     )
 }

@@ -3,8 +3,9 @@ Contacto >Contacto
 
 >>>>>>>>>>>><<<<<<<<<<< experiencias >>>>>>>>>>>><<<<<<<<<<<
 
-<<><><>> <<><><>> 
-<<><><>> exp-Programacion
+<<><><>> <<><><>> <<><><>> <<><><>> <<><><>> <<><><>> <<><><>> <<><><>> 
+
+<<<>expProgramacion<>>> 
 
 Todos los lenguajes serán separados en:
 -js
@@ -14,18 +15,26 @@ Todos los lenguajes serán separados en:
 -c# (progreso)
 -python (progreso)
 
-<<><><>> <<><><>> 
-<<><><>> exp-Electronica
+<<><><>> <<><><>> <<><><>> <<><><>> <<><><>> <<><><>> <<><><>> <<><><>> 
+
+<<<>expElectronica<>>> 
 
 Todo tema de electricidad, arduino y proyectos electronicos y electricos.
 
 
-<<><><>> <<><><>> 
-<<><><>> exp-Dibujo
+<<><><>> <<><><>> <<><><>> <<><><>> <<><><>> <<><><>> <<><><>> <<><><>> 
+
+<<<>expDibujo<>>> 
 
 Dibujos, animaciones, películas, cortometrajes. y modelado
 
-<<><><>> <<><><>> 
-<<><><>> exp-Medic
+<<><><>> <<><><>> <<><><>> <<><><>> <<><><>> <<><><>> <<><><>> <<><><>> 
+
+<<<>expMedic<>>> 
 
 Todo lo que tenga que ver con Asistente paramécido, veterinario, etc.
+
+<<><><>> expParamedic <<><><>> 
+
+
+<<><><>> expVeterinaria <<><><>> 
