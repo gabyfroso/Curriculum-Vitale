@@ -57,7 +57,7 @@ function Exp() {
         <Expansible text='Experiencia'>
             <h3>Experiencia en:</h3>
             <ExtraNav newFocus={'expProgramacion'}>Programacion</ExtraNav>
-            <ExtraNav newFocus={'expElectronica'}>Electronica</ExtraNav>
+            <ExtraNav newFocus={'expElectronica'}>Técnico Electronico</ExtraNav>
             <ExtraNav newFocus={'expDibujo'}>Dibujo</ExtraNav>
             <ExtraNav newFocus={'expParamedic'}>Asistente Paramédico</ExtraNav>
         </Expansible>
@@ -147,28 +147,30 @@ function Header() {
     }
 
     return (
-        <header
-            className={
-                `${StlHeader.header} ${!MenuExpansible ? StlHeader.disableheader : ''}`
-            } >
+        <header className={StlHeader.header}>
+            <ul
+                className={
+                    ` ${!MenuExpansible ? StlHeader.disableheader : StlHeader.header}`
+                } >
+                <Nav extrastyle={StlHeader.ICON} action={OnOffMenuExpansible}>
+                    <BiDownArrow />
+                </Nav>
 
-            <Nav extrastyle={StlHeader.ICON} action={OnOffMenuExpansible}>
-                <BiDownArrow />
-            </Nav>
+                {
+                    MenuExpansible &&
+                    <>
+                        <nav>
+                            <ul>
+                                <Nav newFocus={'Main'}> Inicio </Nav>
+                                <Nav newFocus={'Contacto'}> Contacto </Nav>
+                                <Exp />
+                            </ul>
+                        </nav>
+                        <Nav extrastyle={StlHeader.ICON}> <BiSolidCog /> </Nav>
+                    </>
+                }
+            </ul>
 
-            {
-                MenuExpansible &&
-                <>
-                    <nav>
-                        <ul>
-                            <Nav newFocus={'Main'}> Inicio </Nav>
-                            <Nav newFocus={'Contacto'}> Contacto </Nav>
-                            <Exp />
-                        </ul>
-                    </nav>
-                    <Nav extrastyle={StlHeader.ICON}> <BiSolidCog /> </Nav>
-                </>
-            }
         </header>
     )
 }
