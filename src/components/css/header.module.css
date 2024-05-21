@@ -23,7 +23,9 @@
 button {
     border: thick solid rgba(3, 3, 23, 0.2);
 
-    &:hover{
+    background-color: transparent;
+
+    &:hover {
         letter-spacing: 4px;
     }
 }
@@ -37,7 +39,7 @@ button {
     }
 }
 
-svg{
+svg {
     width: 40px;
     height: 40px;
 }
@@ -48,67 +50,67 @@ svg{
 */
 
 .header {
+    display: grid;
     position: fixed;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
+
+    grid-template-columns: 50px auto 50px;
 
     top: 0;
-    height: auto;
-
     width: 100%;
+
+    align-items: center;
+
     background-color: rgba(0, 0, 59, 0.6);
 
     z-index: 10;
 
-    nav {
-        width: 100%;
+    .ICON {
+        display: flex;
+        align-items: center;
+        width: 40px;
         height: 100%;
 
-        ul {
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
-
-            height: 100%;
-            width: 100%;
-
-            justify-content: space-evenly;
-
-            li {
-                width: 14em;
-                height: 90px;
-            }
+        &>svg{
+            transition: all 2s;
+            height: 40px;
         }
-
     }
 }
 
-.disableheader {
-    min-height: 40px;
-    background-color: transparent;
+
+
+.ulHeader {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    height: 100%;
+        width: 100%;
+
+
+    justify-content: space-around;
+
+    li {
+        width: 14em;
+        height: 90px;
+        align-self: center;
+    }
+}
+
+.exp{
+    letter-spacing: 2px;
+    height: 40px;
+    width: 100%;
 }
 
 .ExtraUl {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
+    display: grid;
+    grid-template-columns: repeat(auto);
 
     li {
         height: 2em !important;
         width: 100%;
 
         background-color: rgba(2, 2, 37, 0.5);
-    }
-}
-
-
-.ICON{
-    width: 40px;
-    height: 40px;
-
-    &>button{
-        padding: 2px;
-        border-radius: 50%;
     }
 }

@@ -1,16 +1,16 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 
 import { UserContext, FocusContext } from './components/contexts'
 
 import Header from "./components/Header";
 
-import Main from './pages/principal';
-import Contacto from './pages/contacto'
+import Main from './pages/Main/indexPage.js';
+import Contacto from './pages/Contacto/indexPage.js';
 
-import Program from "./pages/program";
-import Electronica from './pages/Electronica';
-import Dibujo from './pages/Dibujo';
-import Medic, { AuxParam, Veterinaria } from './pages/Medicina';
+import Program from "./pages/Programador/indexPage.js";
+import Electronica from './pages/Electronica/indexPage.js';
+import Dibujo from './pages/Dibujo/indexPage.js';
+import Medic from './pages/Medicina/indexPage.js';
 
 
 import Error from './pages/Error';
@@ -31,8 +31,8 @@ function App() {
     expElectronica: <Electronica />,
     expDibujo: <Dibujo />,
     expMedic: <Medic />,
-    expParamedic: <AuxParam />,
-    expVeterinaria: <Veterinaria />,
+    expParamedic: <Medic Focus={'expParamedic'} />,
+    expVeterinaria: <Medic Focus={'expVeterinaria'} />,
 
     default: <Error />
   }

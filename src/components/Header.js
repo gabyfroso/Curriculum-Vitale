@@ -6,42 +6,6 @@ import { BiDownArrow, BiSolidCog } from "react-icons/bi";
 
 import StlHeader from './css/header.module.css';
 
-function Expansible({ text = '', children }) {
-
-    const [inFocus, setInFocus] = useState(false);
-
-    const OnFocus = () => {
-        setTimeout(() => {
-            setInFocus(true)
-        }, 400);
-    }
-
-    const OffFocus = () => {
-        setTimeout(() => {
-            setInFocus(false)
-        }, 800);
-    }
-
-    return (
-        <li>
-            <button
-                className={`${StlHeader.btn} ${StlHeader.btnExp} ${StlHeader.btnAppearence}`}
-                onMouseEnter={OnFocus}
-                onMouseLeave={OffFocus}>
-
-                {
-                    !inFocus ?
-                        <>{text}</> :
-
-                        <ul className={StlHeader.ExtraUl}>
-                            {children}
-                        </ul>
-                }
-            </button>
-        </li>
-    )
-}
-
 
 /**
  * ***>>
@@ -52,31 +16,9 @@ function Expansible({ text = '', children }) {
 
 * ***>>
  */
-function Exp() {
-    return (
-        <Expansible text='Experiencia'>
-            <h3>Experiencia en:</h3>
-            <ExtraNav newFocus={'expProgramacion'}>Programacion</ExtraNav>
-            <ExtraNav newFocus={'expElectronica'}>Técnico Electronico</ExtraNav>
-            <ExtraNav newFocus={'expDibujo'}>Dibujo</ExtraNav>
-            <ExtraNav newFocus={'expParamedic'}>Asistente Paramédico</ExtraNav>
-        </Expansible>
-    )
-}
 
 
-/**
- * ***>>
- 
-
-*******>>>>>>>>>>>>>>>> NAVS
-
-
- * ***>>
- */
-
-
-function Nav({ children, newFocus, action, extrastyle }) {
+function ItemLi({ children, newFocus, onClick, classnamebtn, styleli }) {
     const { setFocus } = useContext(FocusContext);
 
     const newAction = () => {
@@ -84,8 +26,8 @@ function Nav({ children, newFocus, action, extrastyle }) {
             setFocus(newFocus);
             return;
         }
-        if (action) {
-            action();
+        if (onClick) {
+            onClick();
             return;
         }
 
@@ -94,10 +36,10 @@ function Nav({ children, newFocus, action, extrastyle }) {
     }
 
     return (
-        <li className={extrastyle}>
+        <li style={styleli}>
             <button
                 onClick={newAction}
-                className={`${StlHeader.btn} ${StlHeader.btnAppearence}`}>
+                className={`${StlHeader.btn} ${StlHeader.btnAppearence} ${classnamebtn}`}>
                 {children}
             </button>
         </li>
@@ -132,6 +74,32 @@ function ExtraNav({ children, newFocus, action, extrastyle = StlHeader.Extrabtn 
     )
 }
 
+function Exp() {
+    const [exp, setExp] = useState(false);
+
+    const OnOffExp = () => {
+        setExp(!exp);
+    }
+
+    return (
+        <>
+            {
+                !exp ? <ItemLi onClick={OnOffExp}>Experiencia</ItemLi> :
+                    <li>
+                        <button onClick={OnOffExp} className={StlHeader.exp}> Experiencia en: </button>
+                        <ul className={StlHeader.ExtraUl}>
+                            <ExtraNav newFocus={'expProgramacion'}>Programacion</ExtraNav>
+                            <ExtraNav newFocus={'expElectronica'}>Técnico Electronico</ExtraNav>
+                            <ExtraNav newFocus={'expDibujo'}>Dibujo</ExtraNav>
+                            <ExtraNav newFocus={'expParamedic'}>Asistente Paramédico</ExtraNav>
+                        </ul>
+                    </li>
+            }
+
+        </>
+    )
+}
+
 
 /**
  * ***>>
@@ -141,36 +109,45 @@ function ExtraNav({ children, newFocus, action, extrastyle = StlHeader.Extrabtn 
 
 function Header() {
     const [MenuExpansible, setMenuExpansible] = useState(false);
+    const [ConfigExpansible, setConfigExpansible] = useState(false);
 
     const OnOffMenuExpansible = () => {
         setMenuExpansible(!MenuExpansible);
     }
+    const OnOffConfigExpansible = () => {
+        setConfigExpansible(!ConfigExpansible);
+    }
 
     return (
-        <header className={StlHeader.header}>
-            <ul
-                className={
-                    ` ${!MenuExpansible ? StlHeader.disableheader : StlHeader.header}`
-                } >
-                <Nav extrastyle={StlHeader.ICON} action={OnOffMenuExpansible}>
-                    <BiDownArrow />
-                </Nav>
+        <header className={`${StlHeader.header}`}>
 
-                {
-                    MenuExpansible &&
-                    <>
-                        <nav>
-                            <ul>
-                                <Nav newFocus={'Main'}> Inicio </Nav>
-                                <Nav newFocus={'Contacto'}> Contacto </Nav>
-                                <Exp />
-                            </ul>
-                        </nav>
-                        <Nav extrastyle={StlHeader.ICON}> <BiSolidCog /> </Nav>
-                    </>
-                }
-            </ul>
+            <button
+                onClick={OnOffMenuExpansible}
+                className={StlHeader.ICON}
+            >
+                <BiDownArrow style={{ transform: `rotate(${MenuExpansible ? 0 : 180}deg)` }} />
+            </button>
 
+
+            <nav>
+                <ul className={`${StlHeader.ulHeader}`} >
+                    {
+                        MenuExpansible &&
+                        <>
+                            <ItemLi newFocus={'Main'}> Inicio </ItemLi>
+                            <ItemLi newFocus={'Contacto'}> Contacto </ItemLi>
+                            <Exp />
+                        </>
+                    }
+                </ul>
+            </nav>
+
+            {
+                MenuExpansible &&
+                <button className={StlHeader.ICON} onClick={OnOffConfigExpansible}>
+                    <BiSolidCog />
+                </button>
+            }
         </header>
     )
 }
