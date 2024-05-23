@@ -1,97 +1,128 @@
 import React from 'react'
 
-
+import STLMain from './Main.module.css';
 import STLPages from '../pages.module.css';
 
+function Nli({ title = '', children }) {
+  return (
+    <li>
+      <h3> {title} </h3>
+      <p>{children}</p>
+    </li>
+  )
+}
+
+function Experiencias() {
+  const ExpLaborales = [{ title: '', fullp: [''] }]
+
+
+  return (
+    <ul className={STLPages.liNoWrap_C}>
+      {
+        ExpLaborales && ExpLaborales.map(item => {
+          const Name = item.title !== '' ? item.title : 'Sin experiencia laboral';
+
+          return (
+            <li key={Name}>
+              <h3> {Name} </h3>
+              {
+                item.fullp.map(elem => (<p key={elem}>{elem}</p>))
+              }
+            </li>
+          )
+        })
+      }
+
+    </ul>
+  )
+}
+
 function Habilidades() {
-    return (
-      <ul>
-        <li>
-          <h3> Constancia </h3>
-          <p>
-            Sólida capacidad para mantener constancia en los objetivos, problemas y proyectos. Refleja un enfoque disciplinado para solución de problemas de cualquier índole, permitiendo aprender y adaptarme a los entornos y hábitos más rápido de lo habitual.
-          </p>
-        </li>
-  
-        <li>
-          <h3> Quick Fix </h3>
-          <p>
-            Durante mi tiempo en una escuela técnica, desarrollé una habilidad destacada para soluciones rápidas y efectivas, priorizándola antes que la optimización en caso de ser necesario. Esto me permitirá mantener funcional para el cliente, mientras que en el servidor solo será necesario la optimización.
-          </p>
-        </li>
-  
-        <li>
-          <h3>Perfil técnico</h3>
-          <p>
-            Hábil ante resolución de problemas, incluso cuando los recursos son excasos. Mi capacidad para encontrar soluciones creativas y eficientes permite el alcance de objetivos ante cualquier situación.
-          </p>
-        </li>
-  
-        <li>
-          <h3>Investigación</h3>
-          <p>
-            Tengo habilidades moldeables ante la investigación por internet, pudiendo tener un mayor progreso ante nuevas técnicas y adoptandolo a los proyectos, me comprometo a mejorarlo contínuamente y adoptarlas segun las necesidades del proyecto.
-          </p>
-        </li>
-      </ul>
-    )
-  }
-  function Conocimientos() {
-    const Programacion = ['javascript', 'java (basic)', 'SQL (basic)'];
-    const Pages = ['html', 'css', 'js', 'Front-End', 'Back-End (basic)']
-    const Programas = ['Linux (basic)', 'VSCode', 'Photoshop (basic)', 'Windows']
-    const Otros = ['Respiración Cardio Pulmonar (RCP)'];
-  
-    return (
-      <tr className={`${STLPages.flexwrap} ${STLPages.ctr} ${STLPages.ulMuly}`}>
-        <td>
-          <h3>Programacion</h3>
-          <ul>
-            {
-              Programacion.map(elem => (
-                <li key={elem}> {elem} </li>
-              ))
-            }
-          </ul>
-        </td>
-        <td>
-          <h3>Paginas</h3>
-          <ul>
-            {
-              Pages.map(elem => (
-                <li key={elem}> {elem} </li>
-              ))
-            }
-          </ul>
-        </td>
-        <td>
-          <h3>Programas & OS</h3>
-          <ul>
-            {
-              Programas.map(elem => (
-                <li key={elem}> {elem} </li>
-              ))
-            }
-          </ul>
-        </td>
-        <td>
-          <h3>Otros</h3>
-          <ul>
-            {
-              Otros.map(elem => (
-                <li key={elem}> {elem} </li>
-              ))
-            }
-          </ul>
-        </td>
-      </tr>
-    )
-  }
+
+
+  return (
+    <ul className={STLPages.liDistanceItem}>
+      <Nli title={'Quick Fix'}>
+        Puedo ser capaz de priorizar el funcionamiento antes que la optimización, ideal para una solución rápida al cliente, y darle más tiempo al servidor de optimizarlo.
+      </Nli>
+      <Nli title='Perfil técnico'>
+        Presento resoluciones creativas para los problemas, y puedo hacerlo con recursos limitados si se me presenta.
+      </Nli>
+      <li>
+        <h3>Experiencia por secundaria técnica</h3>
+        <p>Manejo y reparación de elementos eléctricos</p>
+        <p>Rápido entendimiento de elementos electrónicos</p>
+      </li>
+      <Nli title='Integración al rol'>
+        Puedo llegar a ser un buen lider, como bueno para seguir las ordenes y sugerir si me lo permiten para una resolución alternativa.
+      </Nli>
+      <Nli title='Investigador'>
+        Mis habilidades para la investigación pueden aportar significativamente en las necesidades del proyecto final.
+      </Nli>
+    </ul>
+  )
+}
+function Conocimientos() {
+  const Programacion = ['javascript', 'java (basic)', 'SQL (basic)'];
+  const Pages = ['html', 'css', 'js', 'Front-End', 'Back-End (basic)']
+  const Programas = ['Linux (basic)', 'VSCode', 'Photoshop (basic)', 'Windows']
+  const Otros = ['Respiración Cardio Pulmonar (RCP)'];
+
+  return (
+    <tr className={`${STLPages.flexwrap} ${STLPages.ctr}`}>
+      <td>
+        <h3>Programacion</h3>
+        <ul>
+          {
+            Programacion.map(elem => (
+              <li key={elem}> {elem} </li>
+            ))
+          }
+        </ul>
+      </td>
+      <td>
+        <h3>Paginas</h3>
+        <ul>
+          {
+            Pages.map(elem => (
+              <li key={elem}> {elem} </li>
+            ))
+          }
+        </ul>
+      </td>
+      <td>
+        <h3>Programas & OS</h3>
+        <ul>
+          {
+            Programas.map(elem => (
+              <li key={elem}> {elem} </li>
+            ))
+          }
+        </ul>
+      </td>
+      <td>
+        <h3>Otros</h3>
+        <ul>
+          {
+            Otros.map(elem => (
+              <li key={elem}> {elem} </li>
+            ))
+          }
+        </ul>
+      </td>
+    </tr>
+  )
+}
 
 function Index() {
   return (
-    <>
-        <div>
+    <div className={`${STLMain.Professional} ${STLPages.ulCenter}`}>
+      <div>
+        <h2>Experiencias Laborales</h2>
+        <Experiencias />
+      </div>
+
+      <div>
         <h2>Habilidades</h2>
         <Habilidades />
       </div>
@@ -103,8 +134,8 @@ function Index() {
           </tbody>
         </table>
       </div>
-      
-    </>
+
+    </div>
   )
 }
 

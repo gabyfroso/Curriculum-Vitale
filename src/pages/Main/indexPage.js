@@ -5,10 +5,11 @@ import Proffesional from './Proffesional';
 import Academico from './Academico';
 
 import STLPages from '../pages.module.css';
+import STLMain from './Main.module.css'
 
 function Index() {
     return (
-        <div className={`${STLPages.principal} ${STLPages.ulWithStyle}`}>
+        <div className={`${STLMain.principal}`}>
             <Encabezado />
 
             <div>

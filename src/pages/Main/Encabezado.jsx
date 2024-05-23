@@ -3,6 +3,7 @@ import React from 'react'
 import IMG1 from '../../img/Imagen1.jpg'
 
 import STLPages from '../pages.module.css';
+import STLMain from './Main.module.css';
 
 function Encabezado() {
     const Email = 'gabyfroso@gmail.com';
@@ -64,7 +65,7 @@ function Index() {
     return (
         <>
             <div>
-                <table className={`${STLPages.Table_Principal} `}>
+                <table className={`${STLMain.Table_Principal} `}>
                     <tbody>
                         <Encabezado />
                     </tbody>
@@ -73,7 +74,7 @@ function Index() {
 
             <div>
                 <h1 className={`${STLPages.ctr}`}>Datos</h1>
-                <table className={`${STLPages.Table_Principal}`}>
+                <table className={`${STLMain.Table_Principal}`}>
                     <tbody>
                         <Datos />
                     </tbody>

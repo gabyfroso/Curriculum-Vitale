@@ -1,62 +1,11 @@
-.principal {
-    &>div {
-        margin-top: 40px;
-        margin-bottom: 20px;
-
-        &>:first-child {
-            margin-bottom: 5px;
-        }
-    }
-
-    & * {
-        color: rgb(0, 170, 170);
-    }
-
-    &>div>h1{
-        background: radial-gradient(
-        circle, 
-        rgb(40, 122, 253) 0%, 
-        rgb(0, 136, 255) 51%, 
-        rgb(1, 119, 255) 100%);
-    background-size: 200%;
-    color: transparent;
-    background-clip: text;
-    animation: shine 12s linear infinite;
-    filter: drop-shadow(1px 1px 2px rgb(0, 64, 255, .4));
-    }
-}
-
 table {
-    padding: 2px;
-
     width: 100%;
 }
 
-.Table_Principal {
-    & * {
-        color: aqua;
+.fLetter{
+    ul>li>p::first-letter{
+        margin-left: 5px;
     }
-
-    tr {
-        a {
-            color: rgb(90, 255, 255);
-
-            &:visited {
-                color: rgb(0, 160, 160);
-            }
-
-            &:hover {
-                letter-spacing: 1px;
-            }
-        }
-
-        td {
-            padding-top: 10px;
-            padding-bottom: 10px;
-        }
-    }
-
-    color: rgb(0, 162, 255);
 }
 
 .ctr {
@@ -73,7 +22,7 @@ table {
     justify-content: space-around;
 }
 
-.ulWithStyle {
+.ulMargin {
     ul {
         padding: 0 10px 10px 10px;
         margin-left: 12px;
@@ -82,11 +31,6 @@ table {
             padding-left: 10px;
         }
     }
-
-    ul,
-    li {
-        list-style: square;
-    }
 }
 
 .ulMuly {    
@@ -94,9 +38,6 @@ table {
     
     ul {
         display: flex;
-        align-items: center;
-        align-self: center;
-        align-content: center;
     }
 
     ul,
@@ -104,6 +45,34 @@ table {
         list-style: none;
         margin: 2px 6px;
         padding: 0;
+    }
+}
+
+.ulCenter {
+    ul,li{
+        align-items: center;
+        align-self: center;
+        align-content: center;
+        text-align: center;
+        justify-content: center;
+    }
+}
+
+.liNoWrap_C{
+    li{
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}
+
+.liDistanceItem {
+    position: relative;
+
+    li>:first-child{
+        margin: 8px 0;
     }
 }
 
