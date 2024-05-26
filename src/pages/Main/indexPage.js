@@ -10,14 +10,19 @@ import STLMain from './Main.module.css'
 function Index() {
     return (
         <div className={`${STLMain.principal}`}>
-            <Encabezado />
+            <article>
+                <Encabezado />
+            </article>
+            <article>
+                <div>
+                    <h1 className={`${STLPages.ctr}`}>Perfil Profesional</h1>
+                </div>
+                <Proffesional />
+            </article>
 
-            <div>
-                <h1 className={`${STLPages.ctr}`}>Perfil Profesional</h1>
-            </div>
-            <Proffesional/>
-
-            <Academico />
+            <article>
+                <Academico />
+            </article>
         </div>
     )
 }

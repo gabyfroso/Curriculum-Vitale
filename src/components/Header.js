@@ -4,7 +4,7 @@ import { FocusContext } from "./contexts.js";
 import { BiDownArrow, BiSolidCog } from "react-icons/bi";
 
 
-import StlHeader from './css/header.module.css';
+import StlHeader from './header.module.css';
 
 
 /**

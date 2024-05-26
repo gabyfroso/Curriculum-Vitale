@@ -15,7 +15,7 @@ import Medic from './pages/Medicina/indexPage.js';
 
 import Error from './pages/Error';
 
-import STLmain from './components/css/main.module.css';
+import STLmain from './pages/css/main.module.css';
 import './App.css';
 
 function App() {

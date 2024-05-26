@@ -1,5 +1,5 @@
 .header * {
-    color: #ffffff;
+    color: hsl(189, 100%, 85%);
 }
 
 .btnAppearence {
@@ -21,9 +21,8 @@
 }
 
 button {
-    border: thick solid rgba(3, 3, 23, 0.2);
-
     background-color: transparent;
+    border: none;
 
     &:hover {
         letter-spacing: 4px;
@@ -60,17 +59,20 @@ svg {
 
     align-items: center;
 
-    background-color: rgba(0, 0, 59, 0.6);
+    background-color: rgba(0, 0, 59, 0.8);
+    box-shadow: 2px 2px 4px rgba(0, 0, 59, 0.4);
 
     z-index: 10;
 
     .ICON {
         display: flex;
         align-items: center;
-        width: 40px;
+        width: 60px;
         height: 100%;
 
-        &>svg{
+        margin: 0 10px;
+
+        &>svg {
             transition: all 2s;
             height: 40px;
         }
@@ -85,7 +87,7 @@ svg {
     flex-wrap: wrap;
 
     height: 100%;
-        width: 100%;
+    width: 100%;
 
 
     justify-content: space-around;
@@ -94,10 +96,14 @@ svg {
         width: 14em;
         height: 90px;
         align-self: center;
+        margin: 2px;
+
+        background-color: hsla(230, 100%, 90%, 0.04);
+        border: thick solid hsla(180, 100%, 60%, 0.02);
     }
 }
 
-.exp{
+.exp {
     letter-spacing: 2px;
     height: 40px;
     width: 100%;

@@ -3,6 +3,13 @@ import React from 'react'
 import STLMain from './Main.module.css';
 import STLPages from '../pages.module.css';
 
+const ExpLaborales = [
+  {
+    title: '',
+    fullp: ['']
+  }
+]
+
 function Nli({ title = '', children }) {
   return (
     <li>
@@ -13,9 +20,6 @@ function Nli({ title = '', children }) {
 }
 
 function Experiencias() {
-  const ExpLaborales = [{ title: '', fullp: [''] }]
-
-
   return (
     <ul className={STLPages.liNoWrap_C}>
       {
@@ -117,10 +121,14 @@ function Conocimientos() {
 function Index() {
   return (
     <div className={`${STLMain.Professional} ${STLPages.ulCenter}`}>
+      {
+        // eslint-disable-next-line eqeqeq
+        ExpLaborales[0].fullp != '' && 
       <div>
         <h2>Experiencias Laborales</h2>
         <Experiencias />
       </div>
+      }
 
       <div>
         <h2>Habilidades</h2>
