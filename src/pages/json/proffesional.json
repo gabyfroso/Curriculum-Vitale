@@ -1,0 +1,89 @@
+{
+    "Habilitys": [
+        {
+            "title": "Quick Fix",
+            "p": [
+                "Puedo ser capaz de priorizar el funcionamiento antes que la optimización, ideal para una solución rápida al cliente, y darle más tiempo al servidor de optimizarlo.",
+                ""
+            ]
+        },
+        {
+            "title": "Perfil técnico",
+            "p": [
+                "Presento resoluciones creativas para los problemas, y puedo hacerlo con recursos limitados si se me presenta.",
+                ""
+            ]
+        },
+        {
+            "title": "Experiencia por secundaria técnica",
+            "p": [
+                "Manejo y reparación de elementos eléctricos",
+                "Rápido entendimiento de elementos electrónicos"
+            ]
+        },
+        {
+            "title": "Integración al rol",
+            "p": [
+                "Puedo llegar a ser un buen lider, como bueno para seguir las ordenes y sugerir si me lo permiten para una resolución alternativa.",
+                ""
+            ]
+        },
+        {
+            "title": "",
+            "p": [
+                "",
+                ""
+            ]
+        }
+    ],
+    "Conocimientos": [
+        {
+            "title": "Programacion",
+            "items": [
+                "javascript",
+                "java (basic)",
+                "SQL (basic)"
+            ]
+        },
+        {
+            "title": "Pages",
+            "items": [
+                "html",
+                "css",
+                "js",
+                "Front-End",
+                "Back-End (basic)"
+            ]
+        },
+        {
+            "title": "Programas",
+            "items": [
+                "Linux (basic)",
+                "VSCode",
+                "Photoshop (basic)",
+                "krita",
+                "Blender (basic)",
+                "Auto CAD (basic)"
+            ]
+        },
+        {
+            "title": "Sitemas Operativos",
+            "items": [
+                "Windows",
+                "Linux (Ubuntu, Zorin)"
+            ]
+        },
+        {
+            "title": "Otros",
+            "items": [
+                "Respiración Cardio Pulmonar (RCP)"
+            ]
+        }
+    ],
+    "Experiencias_Laborales": [
+        {
+            "title": "",
+            "items": []
+        }
+    ]
+}

@@ -1,25 +1,7 @@
 .principal {
     overflow-x: hidden;
 
-
     &>article {
-        margin-top: 40px;
-        margin-bottom: 20px;
-
-        padding: 20px 5px;
-
-        border: solid rgba(44, 138, 169);
-        border-radius: 10px;
-
-        background: rgba(12, 41, 100, 0.4);
-        background: linear-gradient(90deg,
-                rgb(3, 29, 73) 0%,
-                rgba(6, 79, 142, 0.4) 50%,
-                rgb(1, 29, 76) 100%);
-
-        animation: shine 12s linear infinite;
-        background-size: 200%;
-
         &>:first-child {
             margin-bottom: 5px;
 
@@ -93,6 +75,12 @@
 
         filter: drop-shadow(1px 1px 2px rgb(0, 64, 255, .4));
         color: transparent;
+    }
+
+    abbr{
+        letter-spacing: 1px;
+        font-size: 1.2rem;
+        color: aquamarine;
     }
 }
 

@@ -7,25 +7,26 @@ function Academico() {
         <ul>
             <div>
                 <li>
-                    <h3>Primario:</h3>
-                    <abbr>Escuela de la patria doctor Manuel Belgrano</abbr>
+                    <abbr>Primario (completo):</abbr>
+                    <p>Escuela de la Patria Doctor Manuel Belgrano</p>
                 </li>
                 <li>
-                    <h3>Secundario:</h3>
-                    <abbr>Técnica 2 Obispo Colombres</abbr>
+                    <abbr>Secundario (completo):</abbr>
+                    <p>Técnica 2 Obispo Colombres</p>
                 </li>
                 <li>
-                    <h3>Universidad:</h3>
-                    <abbr>Universidad Tecnológica Nacional (UTN):</abbr>
-                    <abbr>Ingenieria Electronica </abbr>
-                    <abbr>Ingeniería en Sistemas </abbr>
+                    <abbr>Universidad:</abbr>
+                    <p>Universidad Tecnológica Nacional (UTN):</p>
+                    <p>Ingenieria Electronica (abandonado) </p>
+                    <p>Ingeniería en Sistemas (abandonado) </p>
                 </li>
             </div>
             <div className={STLPages.liNoWrap_C}>
             <li>
+                <abbr>Cursos</abbr>
                 <h3>Instituto de Formación Profesional (NOA)</h3>
-                <abbr>Asistente Paramédico</abbr>
-                <abbr></abbr>
+                <p>Asistente Paramédico</p>
+                <p></p>
             </li>
             </div>
 

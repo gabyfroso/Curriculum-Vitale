@@ -3,6 +3,7 @@ import React, { useContext } from 'react';
 import { UserContext, FocusContext } from './components/contexts'
 
 import Header from "./components/Header";
+import Aside from './components/Aside.js';
 
 import Main from './pages/Main/indexPage.js';
 import Contacto from './pages/Contacto/indexPage.js';
@@ -15,7 +16,7 @@ import Medic from './pages/Medicina/indexPage.js';
 
 import Error from './pages/Error';
 
-import STLmain from './pages/css/main.module.css';
+import STLpages from './pages/pages.module.css';
 import './App.css';
 
 function App() {
@@ -42,10 +43,15 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <div style={{ width: '100%' }} className={STLmain.DIVmain}>
-        <h2 className={STLmain.novisable}>{Focus}</h2>
+      <Aside />
+      <div style={{ width: '100%' }} className={STLpages.DIVmain}>
+        <h2 className={STLpages.novisable}>{Focus}</h2>
         <main>
-          {SourceApp}
+          <Main />
+          <div className='salto1 salto' />
+          <Program />
+          <div className='salto2 salto' />
+          <Dibujo />
         </main>
       </div>
     </div>

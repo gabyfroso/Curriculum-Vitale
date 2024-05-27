@@ -1,3 +1,98 @@
+/* general */
+
+section {
+  margin: 40px 0;
+
+  min-height: 400px;
+}
+
+.salto {
+  height: 600px;
+  background: rgb(5, 64, 170);
+  background: linear-gradient(0deg,
+      rgba(2, 26, 51, 0.2) 24%,
+      rgba(8, 138, 208, 0.4) 47%,
+      rgba(2, 26, 51, 0.2) 67%);
+
+  opacity: .2;
+}
+
+
+/* Debería funcionar algun dia*/
+
+aside {
+  &>ul {
+    &>li {
+      animation-name: Loading;
+      animation-fill-mode: both;
+      animation-timeline: var(--timeline);
+    }
+
+    &>.pg0 {
+      animation-timeline: var(--pg0);
+      background-color: aqua;
+    }
+
+    &>.pg1 {
+      animation-timeline: var(--pg1);
+      background-color: blue;
+    }
+
+    &>.pg2 {
+      animation-timeline: var(--pg2);
+      background-color: red;
+    }
+  }
+}
+
+main {
+  &>section {
+    view-timeline-axis: block;
+  }
+
+  &>section:nth-of-type(1) {
+    view-timeline-name: var(--pg0);
+  }
+
+  &>section:nth-of-type(2) {
+    view-timeline-name: var(--pg1);
+  }
+
+  &>section:nth-of-type(3) {
+    view-timeline-name: var(--pg2);
+  }
+}
+
+@keyframes Loading {
+  0% {
+    transform: scaleX(0%);
+    filter: hue-rotate(-20deg);
+    height: 8px;
+  }
+
+  98% {
+    transform: scaleX(90%);
+    filter: hue-rotate(0deg);
+    height: 10px;
+  }
+
+  100% {
+    transform: scaleY(.1);
+    height: 20px;
+    padding: 0 0;
+  }
+}
+
+
+
+
+
+
+
+
+
+/* EXTRAS */
+
 * {
   margin: 0;
   padding: 0;

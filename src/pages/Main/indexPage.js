@@ -1,21 +1,21 @@
 import React from 'react'
 
-import Encabezado from './Encabezado';
-import Proffesional from './Proffesional';
-import Academico from './Academico';
+import Encabezado from './Encabezado.jsx';
+import Proffesional from './Proffesional.jsx';
+import Academico from './Academico.jsx';
 
 import STLPages from '../pages.module.css';
 import STLMain from './Main.module.css'
 
 function Index() {
     return (
-        <div className={`${STLMain.principal}`}>
+        <section className={`${STLMain.principal} ${STLPages.section}`}>
             <article>
                 <Encabezado />
             </article>
             <article>
                 <div>
-                    <h1 className={`${STLPages.ctr}`}>Perfil Profesional</h1>
+                    <h1 className={`${STLPages.ctr}`}>Perfil</h1>
                 </div>
                 <Proffesional />
             </article>
@@ -23,7 +23,7 @@ function Index() {
             <article>
                 <Academico />
             </article>
-        </div>
+        </section>
     )
 }
 

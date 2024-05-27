@@ -68,18 +68,18 @@ function Datos() {
 function Index() {
   return (
     <>
-      <aside>
+      <div>
         <table className={`${STLMain.Table_Principal} `}>
           <tbody>
             <Encabezado />
           </tbody>
         </table>
-      </aside>
+      </div>
 
-      <aside>
+      <div>
         <h1 className={`${STLPages.ctr}`}>Datos</h1>
         <Datos />
-      </aside>
+      </div>
     </>
   )
 }
