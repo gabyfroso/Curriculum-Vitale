@@ -5,11 +5,10 @@ import { UserContext, FocusContext } from './components/contexts'
 import Header from "./components/Header";
 import Aside from './components/Aside.js';
 
-import Main from './pages/Main/indexPage.js';
+import Principal from './pages/Principal/indexPage.js';
 import Contacto from './pages/Contacto/indexPage.js';
 
 import Program from "./pages/Programador/indexPage.js";
-import Electronica from './pages/Electronica/indexPage.js';
 import Dibujo from './pages/Dibujo/indexPage.js';
 import Medic from './pages/Medicina/indexPage.js';
 
@@ -25,15 +24,17 @@ function App() {
 
   const Source =
   {
-    Main: <Main />,
+    Main:
+      <>
+        <Principal/>
+        <div className='salto1 salto' />
+        <Program />
+        <div className='salto2 salto' />
+        <Dibujo />
+        <div className='salto3 salto' />
+        <Medic/>
+      </>,
     Contacto: <Contacto />,
-
-    expProgramacion: <Program />,
-    expElectronica: <Electronica />,
-    expDibujo: <Dibujo />,
-    expMedic: <Medic />,
-    expParamedic: <Medic Focus={'expParamedic'} />,
-    expVeterinaria: <Medic Focus={'expVeterinaria'} />,
 
     default: <Error />
   }
@@ -47,11 +48,7 @@ function App() {
       <div style={{ width: '100%' }} className={STLpages.DIVmain}>
         <h2 className={STLpages.novisable}>{Focus}</h2>
         <main>
-          <Main />
-          <div className='salto1 salto' />
-          <Program />
-          <div className='salto2 salto' />
-          <Dibujo />
+          { SourceApp }
         </main>
       </div>
     </div>

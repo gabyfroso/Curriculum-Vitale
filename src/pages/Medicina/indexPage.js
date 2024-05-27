@@ -26,9 +26,10 @@ function Index( {Focus}) {
   const SourceApp = Source[Focus || 'Err'];
 
   return (
-    <div>
+    <section>
+      <h1> {Focus} </h1>
       {SourceApp}
-    </div>
+    </section>
   )
 }
 

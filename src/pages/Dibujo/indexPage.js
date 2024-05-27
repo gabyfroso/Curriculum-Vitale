@@ -6,7 +6,7 @@ import STLMain from './Main.module.css'
 function Index() {
   return (
     <section>
-      Dibujo
+      <h1> Dibujo </h1>
     </section>
   )
 }

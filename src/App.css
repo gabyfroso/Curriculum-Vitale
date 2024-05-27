@@ -1,21 +1,54 @@
 /* general */
 
-section {
-  margin: 40px 0;
+section{
+  background-color: hsla(180, 100%, 50%, 0.1);
 
-  min-height: 400px;
+  height: auto;
+  min-height: 300px;
+
+  &>article{
+    min-height: 200px;
+  
+    margin: 20px 0;
+  
+    padding: 20px 5px;
+  
+    border: solid rgba(44, 138, 169);
+    border-radius: 10px;
+  
+    background: rgba(12, 41, 100, 0.4);
+    background: linear-gradient(90deg,
+            rgb(3, 29, 73) 0%,
+            rgba(6, 79, 142, 0.4) 50%,
+            rgb(1, 29, 76) 100%);
+  
+    animation: shine 12s linear infinite;
+    background-size: 200%;
+  }
+  
+  .salto {
+    height: 600px;
+    background: rgb(5, 64, 170);
+    background: linear-gradient(0deg,
+        rgba(2, 26, 51, 0.2) 24%,
+        rgba(8, 138, 208, 0.4) 47%,
+        rgba(2, 26, 51, 0.2) 67%);
+  
+    opacity: .2;
+  }
 }
 
-.salto {
-  height: 600px;
-  background: rgb(5, 64, 170);
-  background: linear-gradient(0deg,
-      rgba(2, 26, 51, 0.2) 24%,
-      rgba(8, 138, 208, 0.4) 47%,
-      rgba(2, 26, 51, 0.2) 67%);
+@keyframes shine {
+  0% {
+      background-position: -100% center;
+  }
 
-  opacity: .2;
+  100% {
+      background-position: 100% center;
+  }
 }
+
+
 
 
 /* Debería funcionar algun dia*/
