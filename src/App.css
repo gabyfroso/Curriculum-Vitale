@@ -77,8 +77,7 @@ main {
   }
 
   100% {
-    transform: scaleY(.1);
-    height: 20px;
+    height: 0px;
     padding: 0 0;
   }
 }

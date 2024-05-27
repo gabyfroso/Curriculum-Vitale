@@ -16,7 +16,7 @@ function Academico() {
                 </li>
                 <li>
                     <abbr>Universidad:</abbr>
-                    <p>Universidad Tecnológica Nacional (UTN):</p>
+                    <h3>Universidad Tecnológica Nacional (UTN):</h3>
                     <p>Ingenieria Electronica (abandonado) </p>
                     <p>Ingeniería en Sistemas (abandonado) </p>
                 </li>
