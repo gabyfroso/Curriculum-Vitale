@@ -31,14 +31,23 @@ function NItems({ Item = { title: '', items: [] }, titleI = '' }) {
         )
     }
 
+    const TransformElem = (elem = '')=>{
+        
+        return elem
+    }
+
     return (
         <li>
             <h3> {Item.title ?? 'TitleErr'} </h3>
             {
                 Array.isArray(Item.items) &&
-                Item.items.map((elem, i) => i === 0 ?
-                    <abbr key={i}>{elem}</abbr> :
-                    <p key={i}> {elem} </p>)
+                Item.items.map((elem, i) => {
+                    const NewElem = TransformElem(elem);
+
+                    return i === 0 ?
+                    <abbr key={i}>{NewElem}</abbr> :
+                    <p key={i}> {NewElem} </p>
+                })
             }
         </li>
     )

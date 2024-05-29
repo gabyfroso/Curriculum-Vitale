@@ -62,6 +62,8 @@ svg {
     background-color: rgba(0, 0, 59, 0.8);
     box-shadow: 2px 2px 4px rgba(0, 0, 59, 0.4);
 
+    backdrop-filter: blur(2px);
+
     z-index: 10;
 
     .ICON {
@@ -118,5 +120,17 @@ svg {
         width: 100%;
 
         background-color: rgba(2, 2, 37, 0.5);
+    }
+}
+
+/*pc*/
+@media only screen and (min-width: 667px){
+    .ulHeader {
+        justify-content: flex-end;
+
+        li {
+            width: 10em;
+            height: 60px;
+        }
     }
 }

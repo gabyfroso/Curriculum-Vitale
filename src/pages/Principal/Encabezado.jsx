@@ -56,8 +56,8 @@ function Datos() {
   }
 
   return (
-    <div style={{ display: 'grid', gridTemplateColumns: '240px 240px' }}>
-      <div className={STLPages.ctr} style={{ width: 240, display: 'flex', height: 200 }}>
+    <div style={{ display: 'grid', gridTemplateColumns: '240px auto' }}>
+      <div className={STLPages.ctr} style={{ width: 200, display: 'flex', height: 200 }}>
         <img src={IMG1} alt='Perfil' />
       </div>
       <Data />

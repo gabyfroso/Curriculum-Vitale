@@ -85,8 +85,9 @@ function Exp() {
         <>
             {
                 !exp ? <ItemLi onClick={OnOffExp}>Experiencia</ItemLi> :
-                    <li>
-                        <button onClick={OnOffExp} className={StlHeader.exp}> Experiencia en: </button>
+                    <li onMouseLeave={()=> setExp(false)}>
+                        <button 
+                        onClick={OnOffExp} className={StlHeader.exp}> Experiencia en: </button>
                         <ul className={StlHeader.ExtraUl}>
                             <ExtraNav newFocus={'expProgramacion'}>Programacion</ExtraNav>
                             <ExtraNav newFocus={'expElectronica'}>Técnico Electronico</ExtraNav>

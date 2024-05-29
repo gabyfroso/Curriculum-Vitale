@@ -3,6 +3,12 @@
         {
             "Conocimientos": [
                 {
+                    "title": "style",
+                    "items": [
+                        "li_LastBlock"
+                    ]
+                },
+                {
                     "title": "Programacion",
                     "items": [
                         "javascript",
@@ -16,7 +22,6 @@
                         "react",
                         "html",
                         "css",
-                        "js",
                         "Front-End",
                         "Back-End (basic)"
                     ]
@@ -42,6 +47,39 @@
                     "title": "Otros",
                     "items": [
                         "Respiración Cardio Pulmonar (RCP)"
+                    ]
+                }
+            ],
+            "Idiomas": [
+                {
+                    "title": "style",
+                    "items": [
+                        "grd"
+                    ]
+                },
+                {
+                    "title": "Español",
+                    "items": [
+                        "Nativo"
+                    ]
+                },
+                {
+                    "title": "Portugues",
+                    "items": [
+                        "Básico",
+                        "Destacado: comprensión lectora técnica"
+                    ]
+                },
+                {
+                    "title": "inglés",
+                    "items": [
+                        "Básico"
+                    ]
+                },
+                {
+                    "title": "Aleman",
+                    "items": [
+                        "muy Básico"
                     ]
                 }
             ]
@@ -85,39 +123,18 @@
                         "Presento rápido entendimiento de circuitos electrónicos tras plasmarlo gráficamente, pudiendo calcular sus variables."
                     ]
                 }
-            ],
-            "Idiomas": [
-                {
-                    "title": "style",
-                    "items": [
-                        "ctr", "dsp"
-                    ]
-                },
-                {
-                    "title": "Español",
-                    "items": [
-                        "Nativo"
-                    ]
-                },
-                {
-                    "title": "Portugues",
-                    "items": [
-                        "Básico",
-                        "Destacado: comprensión lectora técnica"
-                    ]
-                },
-                {
-                    "title": "inglés",
-                    "items": [
-                        "Básico"
-                    ]
-                }
             ]
         }
     ],
     "Educación": [
         {
-            "estudios": [
+            "Estudios": [
+                {
+                    "title": "style",
+                    "items": [
+                        
+                    ]
+                },
                 {
                     "title": "Primario (completo):",
                     "items": [

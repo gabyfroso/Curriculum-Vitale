@@ -17,6 +17,7 @@ import Error from './pages/Error';
 
 import STLpages from './pages/pages.module.css';
 import './App.css';
+import './pages/PagesAtt.css';
 
 function App() {
   const { Focus } = useContext(FocusContext);

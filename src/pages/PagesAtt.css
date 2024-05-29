@@ -1,0 +1,83 @@
+/*********************** Section Att ***********************/
+
+section {
+    ul {
+        &[att=grd] {
+            display: grid;
+            grid-template-rows: 50% 50%;
+        }
+
+        &[att=li_LastBlock] {
+            &>li:last-child {
+                width: 100%;
+                padding: 0;
+                margin: 10px 0;
+            }
+        }
+    }
+}
+
+/*********************** PC/Movil ***********************/
+
+/*pc*/
+@media only screen and (min-width: 667px) {
+    section {
+        ul {
+            &[att=grd] {
+                grid-template-columns: 30% 30% 30%;
+            }
+        }
+    }
+}
+
+/*cel*/
+@media only screen and (max-width: 667px) {
+    section {
+        ul {
+            &[att=grd] {
+                grid-template-columns: 50% 50%;
+            }
+        }
+    }
+}
+
+/***********************Extras***********************/
+
+section {
+    article * {
+        color: rgb(175, 220, 255);
+    }
+
+    h1 {
+        background: radial-gradient(circle,
+                rgb(28, 187, 255) 0%,
+                rgb(0, 136, 255) 51%,
+                rgb(28, 187, 255) 100%);
+        background-size: 200%;
+        background-clip: text;
+
+        animation: shine 8s linear infinite;
+        color: transparent;
+    }
+
+    h2 {
+        background: radial-gradient(circle,
+                rgb(35, 107, 223) 0%,
+                rgb(6, 135, 248) 51%,
+                rgb(36, 156, 247) 100%);
+        background-size: 200%;
+        color: transparent;
+        background-clip: text;
+        animation: shine 6s linear infinite alternate;
+
+
+        &::first-letter {
+            margin-left: 5px;
+            color: rgb(0, 153, 255);
+        }
+    }
+
+    h3 {
+        color: aquamarine;
+    }
+}
