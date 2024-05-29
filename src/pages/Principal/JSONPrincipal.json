@@ -1,9 +1,6 @@
 {
     "Perfil Profesional": [
         {
-            
-        },
-        {
             "Conocimientos": [
                 {
                     "title": "Programacion",
@@ -90,6 +87,12 @@
                 }
             ],
             "Idiomas": [
+                {
+                    "title": "style",
+                    "items": [
+                        "ctr", "dsp"
+                    ]
+                },
                 {
                     "title": "Español",
                     "items": [
