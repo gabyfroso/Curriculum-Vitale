@@ -1,3 +1,62 @@
+/*********************** Aside Att ***********************/
+aside {
+    display: grid;
+    position: fixed;
+
+    top: 50px;
+
+    width: 100%;
+
+    background-color: rgba(0, 255, 255, 0.1);
+    z-index: 5;
+
+    * {
+        width: 100%;
+    }
+
+    &>ul {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+
+        align-items: center;
+        height: auto;
+        width: 100%;
+
+        li {
+            width: 100%;
+        }
+
+        .pg0 {
+            background-color: deepskyblue;
+        }
+
+        .pg1 {
+            background-color: blue;
+        }
+
+        .pg2 {
+            background-color: brown;
+        }
+
+        .pg3 {
+            background-color: rgb(209, 244, 140);
+        }
+    }
+}
+
+aside {
+    .hidden {
+        height: 0px;
+    }
+
+    .show {
+        height: 10px;
+        margin: 5px 0;
+    }
+}
+
+
 /*********************** Section Att ***********************/
 
 section {
@@ -14,6 +73,20 @@ section {
                 margin: 10px 0;
             }
         }
+    }
+
+    .hidden {
+        transition: all 1s;
+        transform: scaleX(80%) scaleY(60%) translateX(40%);
+        filter: blur(5px);
+        opacity: .5;
+    }
+
+    .show {
+        animation-direction: reverse;
+        transform: scaleX(100%) scaleY(100%) translateX(0%);
+        opacity: 1;
+        filter: blur(0px);
     }
 }
 

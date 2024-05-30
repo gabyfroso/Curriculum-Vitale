@@ -1,14 +1,13 @@
 import React from 'react'
 
-import STLAside from './aside.module.css';
-
 function Aside() {
   return (
-    <aside className={STLAside.aside}>
+    <aside>
       <ul>
         <li className='pg0' />
         <li className='pg1' />
         <li className='pg2' />
+        <li className='pg3' />
       </ul>
     </aside>
   )
