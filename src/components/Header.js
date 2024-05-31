@@ -18,21 +18,18 @@ import StlHeader from './header.module.css';
  */
 
 
-function ItemLi({ children, newFocus, onClick, classnamebtn, styleli }) {
-    const { setFocus } = useContext(FocusContext);
+function ItemLi({ children, newFocus, newObjetFocus, onClick, classnamebtn, styleli }) {
+    const { setFocus, setObjetFocus } = useContext(FocusContext);
 
     const newAction = () => {
-        if (newFocus) {
-            setFocus(newFocus);
-            return;
-        }
-        if (onClick) {
-            onClick();
-            return;
-        }
+        if (newFocus) setFocus(newFocus);
+        if (newObjetFocus) setObjetFocus(newFocus);
+        if (onClick) onClick();
 
-        console.log('_ _header.js > Nav');
-        console.log('error en la acción del elemento NAV');
+        if (!(onClick || newObjetFocus || newFocus)) {
+            console.log('_ _header.js > Nav');
+            console.log('error en la acción del elemento NAV');
+        }
     }
 
     return (
@@ -46,21 +43,18 @@ function ItemLi({ children, newFocus, onClick, classnamebtn, styleli }) {
     )
 }
 
-function ExtraNav({ children, newFocus, action, extrastyle = StlHeader.Extrabtn }) {
-    const { setFocus } = useContext(FocusContext);
+function ExtraNav({ children, newFocus = 'Main', newObjetFocus, action, extrastyle = StlHeader.Extrabtn }) {
+    const { setFocus, setObjetFocus } = useContext(FocusContext);
 
     const newAction = () => {
-        if (newFocus) {
-            setFocus(newFocus);
-            return;
-        }
-        if (action) {
-            action();
-            return;
-        }
+        if (newFocus) setFocus(newFocus);
+        if (newObjetFocus) setObjetFocus(newObjetFocus);
+        if (action) action();
 
-        console.log('_ _header.js > ExtraNav');
-        console.log('error en la acción del elemento NAV');
+        if (!(action || newObjetFocus || newFocus)) {
+            console.log('_ _header.js > Nav');
+            console.log('error en la acción del elemento NAV');
+        }
     }
 
     return (
@@ -85,14 +79,14 @@ function Exp() {
         <>
             {
                 !exp ? <ItemLi onClick={OnOffExp}>Experiencia</ItemLi> :
-                    <li onMouseLeave={()=> setExp(false)}>
-                        <button 
-                        onClick={OnOffExp} className={StlHeader.exp}> Experiencia en: </button>
+                    <li onMouseLeave={() => setExp(false)}>
+                        <button
+                            onClick={OnOffExp} className={StlHeader.exp}> Experiencia en: </button>
                         <ul className={StlHeader.ExtraUl}>
-                            <ExtraNav newFocus={'expProgramacion'}>Programacion</ExtraNav>
-                            <ExtraNav newFocus={'expElectronica'}>Técnico Electronico</ExtraNav>
-                            <ExtraNav newFocus={'expDibujo'}>Dibujo</ExtraNav>
-                            <ExtraNav newFocus={'expParamedic'}>Asistente Paramédico</ExtraNav>
+                            <ExtraNav newObjetFocus={'programacion'}>Programacion</ExtraNav>
+                            <ExtraNav newObjetFocus={'electronica'}>Técnico Electronico</ExtraNav>
+                            <ExtraNav newObjetFocus={'dibujo'}>Dibujo</ExtraNav>
+                            <ExtraNav newObjetFocus={'paramedic'}>Asistente Paramédico</ExtraNav>
                         </ul>
                     </li>
             }
@@ -135,7 +129,7 @@ function Header() {
                     {
                         MenuExpansible &&
                         <>
-                            <ItemLi newFocus={'Main'}> Inicio </ItemLi>
+                            <ItemLi newFocus={'Main'} newObjetFocus={'Main'}> Inicio </ItemLi>
                             <ItemLi newFocus={'Contacto'}> Contacto </ItemLi>
                             <Exp />
                         </>

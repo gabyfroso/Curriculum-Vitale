@@ -17,135 +17,154 @@ import Contacto from './pages/Contacto/indexPage.js';
 import Program from "./pages/Programador/indexPage.js";
 import Dibujo from './pages/Dibujo/indexPage.js';
 import Medic from './pages/Medicina/indexPage.js';
-
+import Electronica from './pages/Electronica/indexPage.js';
 /**
  * CSS (style)
  */
 import STLpages from './pages/pages.module.css';
 import './App.css';
 import './pages/PagesAtt.css';
+import './pages/PagesAnimations.css'
 
-function porcentajeScroll(container, element) {
-  let Porcentaje = 0;
-  console.log('porcentajescroll');
-  console.log(container);
-  console.log(element);
+function ScrollTo(Focus, ObjetFocus) {
+  if (Focus === 'Main') {
+    const Main = document.querySelector('Main');
+    const programacion = document.querySelector('.programacion');
+    const dibujo = document.querySelector('.dibujo');
+    const medicina = document.querySelector('.medicina');
+    const electronica = document.querySelector('.electronica');
 
-  Porcentaje = (Math.min(element.button, container.button) -
-    Math.max(element.top, container.top)) / element.height * 100;
+    const ScrollConst = {
+      Main, programacion, dibujo, medicina, electronica,
+      paramedic: medicina,
+      default: Main
+    }
 
-  if (element.top >= container.top && element.button <= container.button) Porcentaje = 100;
-  if (element.top < container.top && element.button > container.button) Porcentaje = 0;
+    if (ScrollConst[ObjetFocus]) {
+      ScrollConst[ObjetFocus].scrollIntoView({ behavior: 'smooth' }) 
+    } else {
+      console.error(`Focus: ${Focus} ObjFocus: ${ObjetFocus}`);
+      console.error(`No encontrado ${ScrollConst}[${ObjetFocus}] ${ScrollConst[ObjetFocus]}`);
+    }
+  }
 
-  console.log(Porcentaje);
+  if (Focus === 'Contacto') {
 
-  return Porcentaje;
+  }
 }
 
-const handleScroll = (alis, container, element) => {
-  const Porcentaje = porcentajeScroll(container, element);
-  alis.style.transform = `scaleX(${Porcentaje}%)`
-};
+function AnimationMain(toreturn = false) {
+  const asideLis = document.querySelectorAll('aside>ul>li');
+  const sections = document.querySelectorAll('main>section');
+  const articles = document.querySelectorAll('main>section>article');
+
+  if (asideLis && articles && sections) {
+    asideLis.forEach((li, i) => {
+      if (i !== 0) li.classList.add('hidden')
+    });
+
+    articles.forEach((article, i) => {
+      if (i !== 0) article.classList.add('hidden')
+    });
+
+    sections.forEach((section, i) => {
+      section.setAttribute('article--i', i);
+      section.classList.add('hidden');
+    });
+
+  } else {
+    console.error('CRITICAL ERR, no se encontró:');
+    console.error(`asideLis:${asideLis} sections:${sections} articles:${articles}`);
+  };
+
+  const observer_section_to_loading = new IntersectionObserver(entries => {
+    entries.forEach((entry) => {
+      const i_entry = entry.target.getAttribute('article--i') || 1;
+      const AlisFocus = asideLis[i_entry];
+
+      if (!AlisFocus) {
+        console.error('critical err: AlisFocus no encontrado');
+        console.log('Asideli:');
+        console.log(asideLis);
+        console.error(`i_article: ${i_entry}`);
+        return;
+      }
+
+      if (entry.isIntersecting) {
+        AlisFocus.classList.add('show');
+      } else {
+        AlisFocus.classList.remove('show');
+      }
+    });
+  });
+
+
+
+  const observer_articles = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('show');
+      } else {
+        entry.target.classList.remove('show');
+      }
+    })
+  })
+
+  if (toreturn) {
+    observer_articles.disconnect()
+    observer_section_to_loading.disconnect();
+
+    asideLis.forEach((li, i) => {
+      if (i !== 0) li.classList.remove('hidden');
+    });
+
+    articles.forEach((article, i) => {
+      if (i !== 0) article.classList.remove('hidden');
+    });
+
+    sections.forEach((section, i) => {
+      section.classList.remove('hidden');
+    });
+
+    return;
+  }
+
+  document.querySelectorAll('section.hidden').forEach(el => observer_section_to_loading.observe(el));
+  document.querySelectorAll('section .hidden').forEach(el => observer_articles.observe(el));      
+
+}
+
+
 
 function App() {
-  const { Focus } = useContext(FocusContext);
+  const { Focus, ObjetFocus } = useContext(FocusContext);
   const { } = useContext(UserContext);
 
   useEffect(() => {
-    const asideLis = document.querySelectorAll('aside>ul>li');
-    const sections = document.querySelectorAll('main>section');
-    const articles = document.querySelectorAll('main>section>article');
+    Focus === 'Main' ? AnimationMain() : AnimationMain(false);
 
-    if (asideLis && articles && sections) {
-      asideLis.forEach(li => li.classList.add('hidden'))
-      articles.forEach(article => article.classList.add('hidden'))
-      sections.forEach((section, i) => {
-        section.setAttribute('article--i', i);
-        section.classList.add('hidden')
-      })
-    } else {
-      console.error('CRITICAL ERR, no se encontró:');
-      console.error(`asideLis:${asideLis} sections:${sections} articles:${articles}`);
-    };
-
-    const observer_section_to_loading = new IntersectionObserver(entries => {
-      entries.forEach((entry) => {
-        const i_entry = entry.target.getAttribute('article--i') || 0;
-        const AlisFocus = asideLis[i_entry];
-
-        if (!AlisFocus) {
-          console.error('critical err: AlisFocus no encontrado');
-          console.log('Asideli:');
-          console.log(asideLis);
-          console.error(`i_article: ${i_entry}`);
-          return;
-        }
-        console.log(entry);
-
-        if (!entry.boundingClientRect) {
-          console.error('bounding error');
-          return;
-        }
-
-        if (!entry.rootBounds) {
-          console.error('rootboundserr');
-          return;
-        }
-
-        const container = {
-          top: entry.target.getBoundingClientRect().top,
-          bottom: entry.target.getBoundingClientRect().bottom,
-
-          height: entry.target.getBoundingClientRect().height,
-        }
-
-        const element = {
-          top: entry.rootBounds.top,
-          bottom: entry.rootBounds.bottom,
-
-          height: entry.rootBounds.height,
-        }
-
-        //const handleScroll_observer = handleScroll(AlisFocus, container, element);
-        
-        if (entry.isIntersecting) {
-          AlisFocus.classList.add('show');
-          //window.addEventListener('scroll', handleScroll_observer);
-        } else {
-          AlisFocus.classList.remove('show');
-          //window.removeEventListener('scroll', handleScroll_observer);
-        }
-      });
-    });
+  }, [Focus])
 
 
 
+  useEffect(() => {
+    ScrollTo(Focus, ObjetFocus);
+  }, [Focus, ObjetFocus])
 
-    const observer_articles = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('show');
-        } else {
-          entry.target.classList.remove('show');
-        }
-      })
-    })
-
-    document.querySelectorAll('section.hidden').forEach(el => observer_section_to_loading.observe(el));
-    document.querySelectorAll('section .hidden').forEach(el => observer_articles.observe(el));
-
-  }, [])
 
 
   const SMain = () => {
     return (
       <>
+        <div className='jump--0 Main' style={{ height: 0 }} />
         <Principal />
-        <div className='jump--1' />
+        <div className='jump--1 programacion' />
         <Program />
-        <div className='jump--2' />
+        <div className='jump--2 dibujo' />
         <Dibujo />
-        <div className='jump--3' />
+        <div className='jump--3 electronica' />
+        <Electronica />
+        <div className='jump--4 medicina' />
         <Medic />
       </>
     )
@@ -167,7 +186,7 @@ function App() {
       <div style={{ width: '100%' }} className={STLpages.DIVmain}>
         <h2 className={STLpages.novisable}>{Focus}</h2>
         <main>
-          {SourceApp}
+          {Focus === 'Main' ? <SMain/> : SourceApp}
         </main>
       </div>
     </div>

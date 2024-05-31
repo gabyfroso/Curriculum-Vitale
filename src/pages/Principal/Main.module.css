@@ -78,3 +78,22 @@ section {
         background-position: 100% center;
     }
 }
+
+
+/***********************Header***********************/
+
+.photoCV{
+    border-radius: 50%;
+
+    background-color: rgb(0, 48, 90) !important;
+    padding: 10px;
+
+    overflow: hidden;
+    margin-left: 20px;
+    
+    img{
+        transform: scale(1.2);
+        margin-left: 10px;
+        object-fit: fill;
+    }
+}

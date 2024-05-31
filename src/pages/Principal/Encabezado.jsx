@@ -1,6 +1,6 @@
 import React from 'react'
 
-import IMG1 from '../../img/Imagen1.jpg'
+import IMG1 from '../../img/PhotoCV.png'
 
 import STLPages from '../pages.module.css';
 import STLMain from './Main.module.css';
@@ -57,7 +57,7 @@ function Datos() {
 
   return (
     <div style={{ display: 'grid', gridTemplateColumns: '240px auto' }}>
-      <div className={STLPages.ctr} style={{ width: 200, display: 'flex', height: 200 }}>
+      <div className={`${STLPages.ctr} ${STLMain.photoCV}`} style={{ width: 200, display: 'flex', height: 200 }}>
         <img src={IMG1} alt='Perfil' />
       </div>
       <Data />

@@ -27,8 +27,10 @@ function Index( {Focus}) {
 
   return (
     <section>
-      <h1> {Focus} </h1>
-      {SourceApp}
+      <h1>Paramedico</h1>
+      <article>
+      
+      </article>
     </section>
   )
 }

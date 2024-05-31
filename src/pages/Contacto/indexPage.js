@@ -5,9 +5,12 @@ import STLMain from './Main.module.css'
 
 function Index() {
   return (
-    <div>
-      Contacto
-    </div>
+    <section>
+      <h1>Contacto</h1>
+      <article>
+
+      </article>
+    </section>
   )
 }
 

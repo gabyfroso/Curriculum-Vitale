@@ -8,6 +8,7 @@ function Aside() {
         <li className='pg1' />
         <li className='pg2' />
         <li className='pg3' />
+        <li className='pg4' />
       </ul>
     </aside>
   )
