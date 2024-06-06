@@ -1,0 +1,94 @@
+{
+    "Perfil Profesional": [
+        {
+            "Conocimientos": [
+                {
+                    "title": "Programacion",
+                    "items": [
+                        "javascript",
+                        "java (basic)",
+                        "SQL (basic)"
+                    ]
+                },
+                {
+                    "title": "Paginas web",
+                    "items": [
+                        "react",
+                        "html css",
+                        "Front-End",
+                        "Back-End (basic)"
+                    ]
+                },
+                {
+                    "title": "Programas",
+                    "items": [
+                        "VSCode",
+                        "Photoshop (basic)",
+                        "krita",
+                        "Blender (basic)",
+                        "Auto CAD (basic)"
+                    ]
+                }
+            ],
+            "Idiomas": [
+                {
+                    "title": "style",
+                    "items": [
+                        "grd"
+                    ]
+                },
+                {
+                    "title": "Español",
+                    "items": [
+                        "Nativo"
+                    ]
+                },
+                {
+                    "title": "Portugues",
+                    "items": [
+                        "Básico",
+                        "Destacado: comprensión lectora técnica"
+                    ]
+                },
+                {
+                    "title": "inglés",
+                    "items": [
+                        "Básico"
+                    ]
+                },
+                {
+                    "title": "Aleman",
+                    "items": [
+                        "muy Básico"
+                    ]
+                }
+            ]
+        }
+    ],
+    "Habilidades": [
+        {
+            "Personales": [
+                {
+                    "title": "Quick Fix",
+                    "items": [
+                        "Ofrezco soluciones rápidas y efectivas, priorizando el funcionamiento por sobre la optimización si la situación lo requiere"
+                    ]
+                },
+                
+                {
+                    "title": "Adaptable",
+                    "items": [
+                        "Mi adaptación rápida a entornos diferentes permitirá mantener la posición asignada sin problemas. Puede favorescerse ante cambios de espacios de trabajos, incluyendo localidades.",
+                        "Puedo llegar a ser un buen líder, como bueno para seguir las ordenes."
+                    ]
+                },
+                {
+                    "title": "Investigador",
+                    "items": [
+                        "Debido a las ideas creativas, puedo ser capaz de buscar soluciones alternativas ante problemas que se me presenten"
+                    ]
+                }
+            ]
+        }
+    ]
+}

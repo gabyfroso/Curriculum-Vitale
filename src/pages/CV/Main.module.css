@@ -1,0 +1,99 @@
+section.MainCV {
+    .abbrPriori {
+        abbr {
+            color: aquamarine;
+        }
+    }
+
+    article>div>h2 {
+        margin-left: 20px;
+    }
+
+
+    ul {
+
+
+        &>li {
+            margin: 8px 12px;
+            text-align: center;
+        }
+    }
+
+
+    h1 {
+        margin: 30px 0;
+        text-align: center;
+
+        font-size: 2.2rem;
+
+
+        animation: shine 8s linear infinite;
+
+        filter: drop-shadow(1px 1px 2px rgb(0, 64, 255, .4));
+    }
+
+    h2 {
+        margin-top: 20px;
+        margin-bottom: 10px;
+
+
+        &::first-letter {
+            margin-left: 5px;
+            color: rgb(0, 153, 255);
+        }
+    }
+
+    h3 {
+        color: aquamarine;
+    }
+
+    abbr {
+        letter-spacing: 1px;
+        font-size: 1.2rem;
+    }
+}
+
+/*pc*/
+@media only screen and (min-width: 667px) {
+    section {
+        ul {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+
+            justify-content: space-around;
+        }
+    }
+}
+
+
+/***********************Animations***********************/
+
+@keyframes shine {
+    0% {
+        background-position: -100% center;
+    }
+
+    100% {
+        background-position: 100% center;
+    }
+}
+
+
+/***********************Header***********************/
+
+.photoCV{
+    border-radius: 50%;
+
+    background-color: rgb(0, 48, 90) !important;
+    padding: 10px;
+
+    overflow: hidden;
+    margin-left: 20px;
+    
+    img{
+        transform: scale(1.2);
+        margin-left: 10px;
+        object-fit: fill;
+    }
+}

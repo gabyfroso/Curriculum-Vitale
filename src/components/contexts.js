@@ -15,7 +15,7 @@ const UserProvider = ({children}) => {
 }
 
 const FocusProvider = ({children}) => {
-    const [Focus, setFocus] = useState('Main');
+    const [Focus, setFocus] = useState('CV');
     const [ObjetFocus, setObjetFocus] = useState('Main');
     const [size, setSize] = useState(2);
     const [theme, setTheme] = useState(localStorage.getItem('theme') || 'dark');

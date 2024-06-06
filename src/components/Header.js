@@ -103,7 +103,7 @@ function Exp() {
  */
 
 function Header() {
-    const [MenuExpansible, setMenuExpansible] = useState(false);
+    const [MenuExpansible, setMenuExpansible] = useState(true);
     const [ConfigExpansible, setConfigExpansible] = useState(false);
 
     const OnOffMenuExpansible = () => {
@@ -131,6 +131,7 @@ function Header() {
                         <>
                             <ItemLi newFocus={'Main'} newObjetFocus={'Main'}> Inicio </ItemLi>
                             <ItemLi newFocus={'Contacto'}> Contacto </ItemLi>
+                            <ItemLi newFocus={'CV'}>Curriculum Vitale</ItemLi>
                             <Exp />
                         </>
                     }

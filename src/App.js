@@ -11,17 +11,25 @@ import Aside from './components/Aside.js';
 /**
  * PAGES
  */
-import Principal from './pages/Principal/indexPage.js';
-import Contacto from './pages/Contacto/indexPage.js';
+// CV
 
-import Program from "./pages/Programador/indexPage.js";
-import Dibujo from './pages/Dibujo/indexPage.js';
-import Medic from './pages/Medicina/indexPage.js';
-import Electronica from './pages/Electronica/indexPage.js';
+import IndexCV from './pages/CV/indexPage.js';
+
+//Inicio
+
+import Principal from './pages/Inicio/Principal/indexPage.js';
+import Program from "./pages/Inicio/Programador/indexPage.js";
+
+import Dibujo from './pages/Inicio/Dibujo/indexPage.js';
+import Medic from './pages/Inicio/Medicina/indexPage.js';
+import Electronica from './pages/Inicio/Electronica/indexPage.js';
+
+//Contacto
+import Contacto from './pages/Contacto/indexPage.js';
 /**
  * CSS (style)
  */
-import STLpages from './pages/pages.module.css';
+import './pages/pages.css';
 import './App.css';
 import './pages/PagesAtt.css';
 import './pages/PagesAnimations.css'
@@ -61,6 +69,7 @@ function AnimationMain(toreturn = false) {
   if (asideLis && articles && sections) {
     asideLis.forEach((li, i) => {
       if (i !== 0) li.classList.add('hidden')
+        li.classList.remove('show');
     });
 
     articles.forEach((article, i) => {
@@ -105,7 +114,7 @@ function AnimationMain(toreturn = false) {
       if (entry.isIntersecting) {
         entry.target.classList.add('show');
       } else {
-        entry.target.classList.remove('show');
+        //entry.target.classList.remove('show');
       }
     })
   })
@@ -134,6 +143,9 @@ function AnimationMain(toreturn = false) {
 
 }
 
+function AllAnimations() {
+  AnimationMain();
+}
 
 
 function App() {
@@ -141,7 +153,9 @@ function App() {
   const { } = useContext(UserContext);
 
   useEffect(() => {
-    Focus === 'Main' ? AnimationMain() : AnimationMain(false);
+    AllAnimations();
+    
+    Focus !== 'Main' ?? AnimationMain(false);
 
   }, [Focus])
 
@@ -173,6 +187,7 @@ function App() {
   {
     Main: <SMain />,
     Contacto: <Contacto />,
+    CV: <IndexCV/>,
 
     default: <SMain />
   }
@@ -183,10 +198,10 @@ function App() {
     <div className="App">
       <Header />
       <Aside />
-      <div style={{ width: '100%' }} className={STLpages.DIVmain}>
-        <h2 className={STLpages.novisable}>{Focus}</h2>
+      <div style={{ width: '100%' }} className={'DIVmain'}>
+        <h2 className={'novisable'}>{Focus}</h2>
         <main>
-          {Focus === 'Main' ? <SMain/> : SourceApp}
+          {SourceApp}
         </main>
       </div>
     </div>

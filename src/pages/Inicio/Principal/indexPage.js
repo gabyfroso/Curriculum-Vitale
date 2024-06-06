@@ -4,7 +4,6 @@ import JSONPrincipal from './JSONPrincipal.json';
 
 import Encabezado from './Encabezado'
 
-import STLPages from '../pages.module.css';
 import STLMain from './Main.module.css'
 
 function NItems({ Item = { title: '', items: [] }, titleI = '' }) {

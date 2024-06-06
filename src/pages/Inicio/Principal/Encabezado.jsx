@@ -1,8 +1,12 @@
 import React from 'react'
 
-import IMG1 from '../../img/PhotoCV.png'
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 
-import STLPages from '../pages.module.css';
+
+
+
+import IMG1 from '../../img/PhotoCV-600x600.png'
+
 import STLMain from './Main.module.css';
 
 function Encabezado() {
@@ -10,15 +14,15 @@ function Encabezado() {
   const PhoneNumber = '+5493816164351'
 
   return (
-    <tr className={`${STLPages.flexwrap}`}>
-      <td style={{ flexGrow: 1 }} className={`${STLPages.ctr}`}>
-        <h1 className={STLPages.TextAnim}> HUGO GABRIEL FROSONI </h1>
+    <tr className={`flexwrap`}>
+      <td style={{ flexGrow: 1 }} className={`ctr`}>
+        <h1 className={'TextAnim'}> HUGO GABRIEL FROSONI </h1>
         <h2> Programador </h2>
         <h3> Técnico Electrónico </h3>
         <h3> Asistente Paramédico </h3>
       </td>
 
-      <td style={{ width: 300 }} className={`${STLPages.ctr}`}>
+      <td style={{ width: 300 }} className={`ctr`}>
         <h2>Contacto</h2>
         <h3>
           <a href={`mailto:${Email}`}> {Email} </a>
@@ -46,10 +50,14 @@ function Datos() {
     return (
       <ul>
         <li>
-          <abbr> Edad: {edad} </abbr>
+          <a href='https://github.com/gabyfroso'>
+            <FaGithub />
+          </a>
         </li>
         <li>
-          <abbr> Estatura: 1.70 </abbr>
+          <a href='https://www.linkedin.com/gabyfroso'>
+            <FaLinkedin/>
+          </a>
         </li>
       </ul>
     )
@@ -57,7 +65,7 @@ function Datos() {
 
   return (
     <div style={{ display: 'grid', gridTemplateColumns: '240px auto' }}>
-      <div className={`${STLPages.ctr} ${STLMain.photoCV}`} style={{ width: 200, display: 'flex', height: 200 }}>
+      <div className={`ctr ${STLMain.photoCV}`} style={{ width: 200, display: 'flex', height: 200 }}>
         <img src={IMG1} alt='Perfil' />
       </div>
       <Data />
@@ -69,7 +77,7 @@ function Index() {
   return (
     <>
       <div>
-        <table className={`${STLMain.Table_Principal} `}>
+        <table className={`Table_Principal `}>
           <tbody>
             <Encabezado />
           </tbody>
@@ -77,7 +85,7 @@ function Index() {
       </div>
 
       <div>
-        <h1 className={`${STLPages.ctr}`}>Datos</h1>
+        <h1 className={`ctr`}>Datos</h1>
         <Datos />
       </div>
     </>
