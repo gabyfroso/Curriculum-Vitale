@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/Curriculum-Vitale/static/css/main.f6c87684.css",
-    "main.js": "/Curriculum-Vitale/static/js/main.3b32ed47.js",
+    "main.js": "/Curriculum-Vitale/static/js/main.b46a6322.js",
     "static/js/488.74aa849f.chunk.js": "/Curriculum-Vitale/static/js/488.74aa849f.chunk.js",
-    "static/media/PhotoCV-600x600.png": "/Curriculum-Vitale/static/media/PhotoCV-600x600.4ab6190d7a55866f03e4.png",
+    "static/media/PhotoCV-300x300.png": "/Curriculum-Vitale/static/media/PhotoCV-300x300.9ba58e1bea00db29d663.png",
     "index.html": "/Curriculum-Vitale/index.html",
     "main.f6c87684.css.map": "/Curriculum-Vitale/static/css/main.f6c87684.css.map",
-    "main.3b32ed47.js.map": "/Curriculum-Vitale/static/js/main.3b32ed47.js.map",
+    "main.b46a6322.js.map": "/Curriculum-Vitale/static/js/main.b46a6322.js.map",
     "488.74aa849f.chunk.js.map": "/Curriculum-Vitale/static/js/488.74aa849f.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.f6c87684.css",
-    "static/js/main.3b32ed47.js"
+    "static/js/main.b46a6322.js"
   ]
 }
