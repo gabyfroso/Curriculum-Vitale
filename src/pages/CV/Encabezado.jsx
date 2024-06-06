@@ -1,6 +1,6 @@
 import React from 'react'
 
-import IMG1 from '../img/PhotoCV-600x600.png'
+import IMG1 from '../img/PhotoCV-300x300.png'
 
 import STLMain from './Main.module.css';
 
@@ -48,15 +48,15 @@ function Datos() {
           <abbr> Edad: {edad} </abbr>
         </li>
         <li>
-          <abbr> Estatura: 1.70 </abbr>
+          <abbr> Estatura: 1.80 </abbr>
         </li>
       </ul>
     )
   }
 
   return (
-    <div style={{ display: 'grid', gridTemplateColumns: '240px auto' }}>
-      <div className={`ctr ${STLMain.photoCV}`} style={{ width: 200, display: 'flex', height: 200 }}>
+    <div style={{ display: 'grid', gridTemplateColumns: 'auto auto' }}>
+      <div className={`ctr ${STLMain.photoCV}`}>
         <img src={IMG1} alt='Perfil' />
       </div>
       <Data />

@@ -1,54 +1,22 @@
 import React from 'react'
 
-import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaWhatsapp } from "react-icons/fa";
+import { TfiEmail } from "react-icons/tfi";
 
 
 
 
-import IMG1 from '../../img/PhotoCV-600x600.png'
+import IMG1 from '../../img/PhotoCV-300x300.png'
 
 import STLMain from './Main.module.css';
 
-function Encabezado() {
-  const Email = 'gabyfroso@gmail.com';
-  const PhoneNumber = '+5493816164351'
-
-  return (
-    <tr className={`flexwrap`}>
-      <td style={{ flexGrow: 1 }} className={`ctr`}>
-        <h1 className={'TextAnim'}> HUGO GABRIEL FROSONI </h1>
-        <h2> Programador </h2>
-        <h3> Técnico Electrónico </h3>
-        <h3> Asistente Paramédico </h3>
-      </td>
-
-      <td style={{ width: 300 }} className={`ctr`}>
-        <h2>Contacto</h2>
-        <h3>
-          <a href={`mailto:${Email}`}> {Email} </a>
-        </h3>
-        <h3>
-          <a href={`tel:${PhoneNumber}`}>{PhoneNumber}</a>
-        </h3>
-        <h3>Tucumán, San Miguel de Tucumán</h3>
-      </td>
-    </tr>
-  )
-}
-
 function Datos() {
-  const Birthday = new Date('2003-06-23');
-  const DateActual = new Date();
-
-  const AgeIn_milisec = 1000 * 60 * 60 * 24 * 365.25;
-
-  const difIn_ms = DateActual - Birthday;
-
-  let edad = Math.floor(difIn_ms / AgeIn_milisec);
+  const Email = 'gabyfroso@gmail.com';
+  const PhoneNumber = '5493816164351'
 
   const Data = () => {
     return (
-      <ul>
+      <ul className={STLMain.UlData}>
         <li>
           <a href='https://github.com/gabyfroso'>
             <FaGithub />
@@ -56,7 +24,17 @@ function Datos() {
         </li>
         <li>
           <a href='https://www.linkedin.com/gabyfroso'>
-            <FaLinkedin/>
+            <FaLinkedin />
+          </a>
+        </li>
+        <li>
+          <a href={`mailto:${Email}`}>
+            <TfiEmail />
+          </a>
+        </li>
+        <li>
+          <a href={`https://wa.me/${PhoneNumber}`}>
+            <FaWhatsapp />
           </a>
         </li>
       </ul>
@@ -64,8 +42,8 @@ function Datos() {
   }
 
   return (
-    <div style={{ display: 'grid', gridTemplateColumns: '240px auto' }}>
-      <div className={`ctr ${STLMain.photoCV}`} style={{ width: 200, display: 'flex', height: 200 }}>
+    <div style={{ display: 'grid', gridTemplateColumns: 'auto auto' }}>
+      <div className={`ctr ${STLMain.photoCV}`}>
         <img src={IMG1} alt='Perfil' />
       </div>
       <Data />
@@ -77,15 +55,7 @@ function Index() {
   return (
     <>
       <div>
-        <table className={`Table_Principal `}>
-          <tbody>
-            <Encabezado />
-          </tbody>
-        </table>
-      </div>
-
-      <div>
-        <h1 className={`ctr`}>Datos</h1>
+        <h1 className={`ctr`}>Hugo Gabriel Frosoni</h1>
         <Datos />
       </div>
     </>

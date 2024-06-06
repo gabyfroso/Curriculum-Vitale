@@ -49,7 +49,7 @@ function ScrollTo(Focus, ObjetFocus) {
     }
 
     if (ScrollConst[ObjetFocus]) {
-      ScrollConst[ObjetFocus].scrollIntoView({ behavior: 'smooth' }) 
+      ScrollConst[ObjetFocus].scrollIntoView({ behavior: 'smooth' })
     } else {
       console.error(`Focus: ${Focus} ObjFocus: ${ObjetFocus}`);
       console.error(`No encontrado ${ScrollConst}[${ObjetFocus}] ${ScrollConst[ObjetFocus]}`);
@@ -62,6 +62,9 @@ function ScrollTo(Focus, ObjetFocus) {
 }
 
 function AnimationMain(toreturn = false) {
+  const observerSectionBool = false;
+
+
   const asideLis = document.querySelectorAll('aside>ul>li');
   const sections = document.querySelectorAll('main>section');
   const articles = document.querySelectorAll('main>section>article');
@@ -69,24 +72,29 @@ function AnimationMain(toreturn = false) {
   if (asideLis && articles && sections) {
     asideLis.forEach((li, i) => {
       if (i !== 0) li.classList.add('hidden')
-        li.classList.remove('show');
+      li.classList.remove('show');
     });
 
     articles.forEach((article, i) => {
       if (i !== 0) article.classList.add('hidden')
     });
 
-    sections.forEach((section, i) => {
+    observerSectionBool?? sections.forEach((section, i) => {
       section.setAttribute('article--i', i);
       section.classList.add('hidden');
     });
+
 
   } else {
     console.error('CRITICAL ERR, no se encontró:');
     console.error(`asideLis:${asideLis} sections:${sections} articles:${articles}`);
   };
 
+
+  //Depende de observerSectionBool
   const observer_section_to_loading = new IntersectionObserver(entries => {
+    if (!observerSectionBool) return;
+
     entries.forEach((entry) => {
       const i_entry = entry.target.getAttribute('article--i') || 1;
       const AlisFocus = asideLis[i_entry];
@@ -109,19 +117,22 @@ function AnimationMain(toreturn = false) {
 
 
 
+
   const observer_articles = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('show');
       } else {
-        //entry.target.classList.remove('show');
+        entry.target.classList.remove('show');
       }
     })
   })
-
+  
   if (toreturn) {
     observer_articles.disconnect()
-    observer_section_to_loading.disconnect();
+    
+    //Depende de observerSectionBool
+    observerSectionBool ?? observer_section_to_loading.disconnect();
 
     asideLis.forEach((li, i) => {
       if (i !== 0) li.classList.remove('hidden');
@@ -138,8 +149,8 @@ function AnimationMain(toreturn = false) {
     return;
   }
 
-  document.querySelectorAll('section.hidden').forEach(el => observer_section_to_loading.observe(el));
-  document.querySelectorAll('section .hidden').forEach(el => observer_articles.observe(el));      
+  //document.querySelectorAll('section.hidden').forEach(el => observer_section_to_loading.observe(el));
+  document.querySelectorAll('section .hidden').forEach(el => observer_articles.observe(el));
 
 }
 
@@ -154,7 +165,7 @@ function App() {
 
   useEffect(() => {
     AllAnimations();
-    
+
     Focus !== 'Main' ?? AnimationMain(false);
 
   }, [Focus])
@@ -187,7 +198,7 @@ function App() {
   {
     Main: <SMain />,
     Contacto: <Contacto />,
-    CV: <IndexCV/>,
+    CV: <IndexCV />,
 
     default: <SMain />
   }
